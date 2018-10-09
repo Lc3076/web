@@ -49,6 +49,7 @@ export default {
     },
     moveTo(string) {
       this.$message(string);
+      console.log(this);
       this.$store.commit('change',{key:'changePage',value:string})
     }
   },components: {

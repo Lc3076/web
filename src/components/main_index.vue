@@ -8,7 +8,7 @@
         </el-carousel>
         <!-- 卡片 -->
         <el-row v-if="!!imaCard">
-            <el-col :span="4" v-for="(o,index) in imaCard" :key="index" :offset="(index%5!=0) ? 1 : 0">
+            <el-col class="imgcard" :span="4" v-for="(o,index) in imaCard" :key="index" :offset="(index%5!=0) ? 1 : 0">
                 <el-card shadow="hover" :body-style="{ padding: '0px' }" :id="o.id">
                     <img :src="o.src" class="image">
                     <div style="padding: 14px;">
@@ -75,6 +75,12 @@
     width: 100%;
     display: block;
   }
+  .imgcard {
+      height: 20rem;
+  }
+    .el-carousel {
+        min-height: 17rem;
+    }
 
   .clearfix:before,
   .clearfix:after {
@@ -101,8 +107,8 @@
     background-color: #d3dce6;
   }
   .el-card.is-always-shadow, .el-card.is-hover-shadow:focus, .el-card.is-hover-shadow:hover {
-    -webkit-box-shadow: 0 2px 12px 0 #fff;
-    box-shadow: 0 2px 12px 0 #fff;
+    -webkit-box-shadow: 0 5px 40px 0 #fff;
+    box-shadow: 0 5px 40px 0 #fff;
     }
     /* .el-card__body img{
         height:17rem

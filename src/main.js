@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/index.js'
-import {Button,Container,header,main,footer,menu,submenu,menuItem,carousel,carouselItem,row,col,card,message} from 'element-ui'
+import {Button,Container,header,main,footer,menu,submenu,menuItem,carousel,carouselItem,row,col,card,Message} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueLazyload from 'vue-lazyload'
+
+Vue.prototype.$message = Message
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: '3000'}
 Vue.use(Button)
@@ -22,7 +24,6 @@ Vue.use(carouselItem)
 Vue.use(row)
 Vue.use(col)
 Vue.use(card)
-Vue.use(message)
 
 Vue.use(VueLazyload, {
   error: 'assets/images/error.png',
@@ -37,8 +38,7 @@ Vue.config.lang = 'zh-cn'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   store,
-  components: { App },
-  template: '<App/>'
+  router,
+  render: h => h(App)
 })

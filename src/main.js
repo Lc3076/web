@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './store/index.js'
+import store from './store/index'
 import {Button,Container,header,main,footer,menu,submenu,menuItem,carousel,carouselItem,row,col,card,Message} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueLazyload from 'vue-lazyload'
@@ -34,11 +34,14 @@ Vue.use(VueLazyload, {
 
 Vue.config.productionTip = false
 Vue.config.lang = 'zh-cn'
-
+console.log(store)
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  store,
+  el:'#app',
   router,
-  render: h => h(App)
+  store,
+  components:{
+    App
+  },
+  template:'<App/>'
 })

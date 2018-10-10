@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: 'App'
+  data(){
+    return {
+
+    }
+  },
+  name: 'App',
+  mounted(){
+    console.log(this)
+  }
 }
 </script>
 
@@ -21,6 +29,7 @@ body {
   text-align: center;
   color: #2c3e50;
   min-height: 59rem;
-  background: #2c3e50
+  background: #2c3e50;
+  padding: 0 5rem;
 }
 </style>

@@ -26,7 +26,7 @@
         </transition>
       </el-main>
       <el-footer>
-
+        
       </el-footer>
     </el-container>
   </div>
@@ -35,7 +35,7 @@
 <script>
 import mainIndex from './main_index.vue'
 export default {
-  name: 'Index',
+  name: 'index',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -77,5 +77,8 @@ a {
 }
 .el-menu.el-menu--horizontal {
     background: #ccc;
-    }
+}
+.main_index {
+  overflow: hidden;
+}
 </style>

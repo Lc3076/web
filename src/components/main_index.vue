@@ -1,9 +1,14 @@
 <template>
     <div class="main_index">
         <!-- 轮播 -->
-        <el-carousel :interval="4000" type="card" height="200px" v-if="imgCarousel">
+       <!--  <el-carousel :interval="4000" type="card" height="200px" v-if="imgCarousel">
             <el-carousel-item v-for="(item, index) in imgCarousel" :key="index">
               <img :src="(item.src)" alt="flowers"/>
+            </el-carousel-item>
+        </el-carousel> -->
+        <el-carousel :interval="3000" arrow="hover" indicator-position="outside" height="30rem">
+            <el-carousel-item v-for="(item, index) in imgCarousel" :key="index">
+            <h3><img :src="(item.src)" alt="flowers"/></h3>
             </el-carousel-item>
         </el-carousel>
         <!-- 卡片 -->
@@ -40,7 +45,7 @@
                 // console.log("轮播:"+(carousel*1+1))
             }
             for(let imgs=0;imgs<50;imgs++){
-                let randomNum = parseInt(Math.random()*5)+1
+                let randomNum = parseInt(Math.random()*10)+1
                 // console.log('动图：'+(imgs+1))
                 try {
                     this.imaCard.push({src: require('@/assets/images/video/'+ randomNum +'.gif'),id:randomNum,info: '视频剪辑'+randomNum,getUpdataTime: '',getVideoTime: '',getZanNum: '',isZan: 'false'})
@@ -80,6 +85,7 @@
   }
     .el-carousel {
         min-height: 17rem;
+        margin-bottom: 5rem;
     }
 
   .clearfix:before,
